@@ -1,4 +1,6 @@
-"""Unit tests for calculator FastAPI app operations."""
+"""
+Unit tests for calculator FastAPI app operations.
+"""
 from fastapi.testclient import TestClient
 from calculator import app
 
