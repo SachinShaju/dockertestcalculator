@@ -9,7 +9,7 @@ from operations.subtract import subtract
 from operations.multiply import multiply
 from operations.divide import divide
 from operations.modulus import modulus
-from operations.exponent import exponent
+from operations.exponent import exponent #exponent
 
 app = FastAPI()
 
