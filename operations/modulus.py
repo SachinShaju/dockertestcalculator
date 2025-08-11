@@ -1,4 +1,5 @@
-def modulus(x, y): 
+"""Provides the modulus function to calculate the remainder of a division."""
+def modulus(x, y):
     """
     Args:
         x: The Dividend.
@@ -8,3 +9,4 @@ def modulus(x, y):
         The Remainder.
     """
     return x % y
+    
