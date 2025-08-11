@@ -14,6 +14,7 @@ app = FastAPI()
 async def calculate_numbers(request: Request):
     """
     Perform a calculation based on the provided operation and numbers.
+    Example JSON:
     {
         "operation": "add",
         "numb1": 5,
@@ -26,8 +27,6 @@ async def calculate_numbers(request: Request):
 
     if not all(k in data for k in ("operation", "numb1", "numb2")):
         raise HTTPException(status_code=400, detail="Missing keys in request body")
-    
-    
     operation = data["operation"].lower()
     x = data["numb1"]
     y = data["numb2"]
