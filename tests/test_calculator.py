@@ -1,3 +1,4 @@
+"""Unit tests for calculator FastAPI app operations."""
 from fastapi.testclient import TestClient
 from calculator import app
 
@@ -14,7 +15,7 @@ def test_addition():
 def test_subtraction():
     """
     Testing Subtraction.
-    """    
+    """
     response = client.post("/calculate", json={"operation":"subtract","numb1": 10, "numb2": 4})
     assert response.status_code == 200
     assert "Using the operation (subtract)" in response.json()["message"]
@@ -35,7 +36,7 @@ def test_divide():
     assert response.status_code == 200
     assert "Using the operation (divide)" in response.json()["message"]
 
-def test_divide_by_zero(): 
+def test_divide_by_zero():
     """
     Testing Divide by zero.
     """
@@ -65,4 +66,3 @@ def test_invalid_operation():
     response = client.post("/calculate", json={"operation":"invalid","numb1": 1, "numb2": 2})
     assert response.status_code == 400
     assert "error" in response.json()
-
