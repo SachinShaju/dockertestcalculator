@@ -1,3 +1,7 @@
+"""
+This module defines a FastAPI app with a single /calculate endpoint
+that performs basic arithmetic operations.
+"""
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
 from operations.add import add
@@ -52,4 +56,4 @@ async def calculate_numbers(request: Request):
         return {"message" : f"Using the operation ({operation}) we get: {result}"}
 
     except ValueError as ve:
-        raise HTTPException(status_code=400, detail=str(ve))
+        raise HTTPException(status_code=400, detail=str(ve)) from ve
