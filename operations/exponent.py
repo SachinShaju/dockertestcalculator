@@ -1,4 +1,7 @@
-def exponent(x, y): 
+"""
+Provides the exponent function to perform exponentiation between two numbers.
+"""
+def exponent(x, y):
     """
     Args:
         x: The 1st number that is the base.
@@ -8,3 +11,4 @@ def exponent(x, y):
         The result of the operation.
     """
     return x ** y
+    
