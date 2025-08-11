@@ -11,4 +11,3 @@ def exponent(x, y):
         The result of the operation.
     """
     return x ** y
-    
