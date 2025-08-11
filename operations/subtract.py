@@ -1,4 +1,5 @@
-def subtract(x, y): 
+"""Provides the subtract function to perform subtraction between two numbers."""
+def subtract(x, y):
     """
     Args:
         x: The 1st number for subtraction.
