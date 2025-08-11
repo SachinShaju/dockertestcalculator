@@ -39,6 +39,7 @@ jobs:
       with:
         requirements: requirements.txt
         fail: "GPL,AGPL"
+        verbose: true
     - name: Test with pytest
       run: |
         pytest
