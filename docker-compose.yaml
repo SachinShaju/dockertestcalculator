@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  calculator-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/arm64/v8
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
