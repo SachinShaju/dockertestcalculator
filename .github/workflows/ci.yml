@@ -34,12 +34,11 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: License compliance check
-      uses: pilosus/action-pip-license-checker@v1
-      with:
-        requirements: requirements.txt
-        fail: "GPL,AGPL"
-        verbose: true
+    - name: Check licenses
+      run: |
+        pip install pip-licenses
+        pip-licenses --from=mixed --format=markdown --with-license-file --output-file=licenses.md
+        pip-licenses --fail-on 'GPL'
     - name: Test with pytest
       run: |
         pytest
